@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h1>Todo App</h1>
+      <div class="projects">
+        <h2>Projects</h2>
+        <ul class="project-list"></ul>
+        <button class="btn add-project">+ Add Project</button>
+      </div>
+    </aside>
+
+    <main class="content">
+      <div class="todo-header">
+        <h2 class="project-title">Inbox</h2>
+        <button class="btn add-todo">+ Add Todo</button>
+      </div>
+      <div class="todo-list"></div>
+    </main>
+  </div>
+
+  <!-- Project Modal -->
+  <div class="modal project-modal hidden">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Add New Project</h3>
+      <form id="project-form">
+        <input type="text" id="project-name" placeholder="Project name" required>
+        <button type="submit" class="btn">Create Project</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Todo Modal -->
+  <div class="modal todo-modal hidden">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3 class="modal-title">Add New Todo</h3>
+      <form id="todo-form">
+        <input type="text" id="todo-title" placeholder="Title" required>
+        <textarea id="todo-description" placeholder="Description"></textarea>
+        <div class="form-group">
+          <label for="todo-date">Due Date:</label>
+          <input type="date" id="todo-date">
+        </div>
+        <div class="form-group">
+          <label for="todo-priority">Priority:</label>
+          <select id="todo-priority">
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="todo-project">Project:</label>
+          <select id="todo-project"></select>
+        </div>
+        <div class="form-group">
+          <label for="todo-notes">Notes:</label>
+          <textarea id="todo-notes"></textarea>
+        </div>
+        <div class="checklist">
+          <h4>Checklist</h4>
+          <div class="checklist-items"></div>
+          <button type="button" class="btn add-checklist-item">+ Add Item</button>
+        </div>
+        <button type="submit" class="btn">Save Todo</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="dist/main.js"></script>
+</body>
+</html>
